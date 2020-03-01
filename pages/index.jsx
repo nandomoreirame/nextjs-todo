@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { withRedux, TODO_ADD, TODO_REMOVE, TODO_COMPLETE } from '~/store';
+import { withRedux, TODO_ADD, TODO_REMOVE, TODO_COMPLETE, TODO_REMOVE_COMPLETED } from '~/store';
 import { useTodos } from '~/store/hooks';
 import Form from '~/components/TodoForm';
 import List from '~/components/TodoList';
@@ -30,13 +30,18 @@ const HomeTodoApp = () => {
     dispatch({ type: TODO_COMPLETE, payload: { id } });
   };
 
+  const handlerRemoveCompleted = e => {
+    e.preventDefault();
+    dispatch({ type: TODO_REMOVE_COMPLETED });
+  };
+
   return (
     <>
       <Head>
         <title>Nextjs - Todo App</title>
       </Head>
       <div className="container">
-        <List title="Shopping list">
+        <List title="Shopping list" handlerRemoveCompleted={handlerRemoveCompleted}>
           <Form handleSubmit={handleAddTodos} />
           {items.map(item => (
             <Item

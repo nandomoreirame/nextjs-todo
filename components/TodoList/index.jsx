@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './list.module.css';
+import listStyles from './list.module.css';
 
-const TodoList = ({ title, children }) => {
+const TodoList = ({ title, children, handlerRemoveCompleted }) => {
   return (
     <>
       {children && (
-        <section className={styles.section}>
-          {title && <h4 className={styles.listTitle}>{title}</h4>}
-          <div className={styles.list}>{children}</div>
+        <section className={listStyles.root}>
+          {title && <h4 className={listStyles.title}>{title}</h4>}
+          <div className={listStyles.items}>{children}</div>
+          <a href="#" role="button" className={listStyles.remove} onClick={handlerRemoveCompleted}>
+            Remove completed items
+          </a>
         </section>
       )}
     </>
@@ -18,6 +21,7 @@ const TodoList = ({ title, children }) => {
 TodoList.propTypes = {
   title: PropTypes.string,
   children: PropTypes.node.isRequired,
+  handlerRemoveCompleted: PropTypes.func.isRequired,
 };
 
 export default TodoList;

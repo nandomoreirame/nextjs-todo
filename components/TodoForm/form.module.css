@@ -1,17 +1,17 @@
-.form {
+.root {
   margin: 0 0 1.25rem;
   position: relative;
 }
 
 @media (min-width: 460px) {
-  .form {
+  .root {
     min-width: 22.5rem;
     align-items: center;
     display: flex;
   }
 }
 
-.form::before {
+.root::before {
   content: ' + ';
   display: inline-block;
   opacity: .65;
@@ -20,7 +20,7 @@
   bottom: 0.75rem;
 }
 
-.formInput {
+.input {
   background-color: transparent;
   border: none;
   border-bottom: 2px solid rgba(0, 0, 0, .1);
@@ -33,14 +33,14 @@
   width: 100%;
 }
 
-.formInput,
-.formInput:focus,
-.formInput:active {
+.input,
+.input:focus,
+.input:active {
   outline: none;
   box-shadow: none;
 }
 
-.formInput:focus,
-.formInput:active {
+.input:focus,
+.input:active {
   border-color: rgba(0, 0, 0, .6);
 }

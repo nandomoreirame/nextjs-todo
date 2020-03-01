@@ -1,4 +1,4 @@
-.footer {
+.root {
   align-items: center;
   background-color: #fff;
   border-top: 3px solid #ffd506;
@@ -10,25 +10,25 @@
   text-align: center;
 }
 
-.footer p {
+.root p {
   color: rgba(0, 0, 0, .5);
   font-size: 0.6875rem;
   opacity: 0.75;
 }
 
-.footer p:first-child {
+.root p:first-child {
   margin-bottom: 0.3125rem;
 }
 
 @media (min-width: 460px) {
-  .footer {
+  .root {
     left: 0;
     position: fixed;
     right: 0;
     z-index: 100;
   }
 
-  .footer p {
+  .root p {
     font-size: 0.8125rem;
   }
 }

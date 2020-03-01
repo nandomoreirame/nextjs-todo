@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './form.module.css';
+import formStyles from './form.module.css';
 
 const TodoForm = ({ handleSubmit }) => (
-  <form className={styles.form} onSubmit={handleSubmit}>
-    <input className={styles.formInput} type="text" name="todo" placeholder="Add a new item" />
+  <form className={formStyles.root} onSubmit={handleSubmit}>
+    <input className={formStyles.input} type="text" name="todo" placeholder="Add a new item" />
   </form>
 );
 

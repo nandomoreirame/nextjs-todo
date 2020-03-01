@@ -1,4 +1,4 @@
-import { TODO_ADD, TODO_COMPLETE, TODO_REMOVE } from './actions';
+import { TODO_ADD, TODO_COMPLETE, TODO_REMOVE, TODO_REMOVE_COMPLETED } from './actions';
 export const INITIAL_STATE = [];
 
 export default (state = INITIAL_STATE, { type, payload }) => {
@@ -13,6 +13,9 @@ export default (state = INITIAL_STATE, { type, payload }) => {
 
     case TODO_REMOVE:
       return state.filter(item => item.id !== payload.id);
+
+    case TODO_REMOVE_COMPLETED:
+      return state.filter(item => !item.completed);
   }
 
   return state;

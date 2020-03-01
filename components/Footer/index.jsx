@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './footer.module.css';
+import footer from './footer.module.css';
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className={footer.root}>
       <p>
         <strong>Shopping List</strong> is an application made for study purposes, using{' '}
         <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">
@@ -25,10 +25,14 @@ const Footer = () => {
       </p>
       <p>
         The source code can be found at{' '}
-        <a href="https://nandomoreira.dev/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/nandomoreirame/nextjs-todo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Github
         </a>
-        created by{' '}
+        . Created by{' '}
         <a href="https://nandomoreira.dev/" target="_blank" rel="noopener noreferrer">
           Fernando Moreira
         </a>

@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import deepFreeze from 'deep-freeze';
-import { TODO_ADD, TODO_COMPLETE, TODO_REMOVE } from './actions';
+import { TODO_ADD, TODO_COMPLETE, TODO_REMOVE, TODO_REMOVE_COMPLETED } from './actions';
 import todos from './todos';
 
 test('should todos be a function', () => {
@@ -98,6 +98,26 @@ test('should remove an item', () => {
   });
 
   const after = [{ id: 1, text: 'foo', completed: false }];
+
+  expect(todos(before, actions)).to.be.deep.equal(after);
+});
+
+test('should remove all completed items', () => {
+  const before = deepFreeze([
+    { id: 1, text: 'foo', completed: true },
+    { id: 2, text: 'bar', completed: true },
+    { id: 3, text: 'nono', completed: false },
+    { id: 4, text: 'baz', completed: false },
+  ]);
+
+  const actions = deepFreeze({
+    type: TODO_REMOVE_COMPLETED,
+  });
+
+  const after = [
+    { id: 3, text: 'nono', completed: false },
+    { id: 4, text: 'baz', completed: false },
+  ];
 
   expect(todos(before, actions)).to.be.deep.equal(after);
 });

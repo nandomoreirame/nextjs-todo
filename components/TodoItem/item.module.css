@@ -1,4 +1,4 @@
-.item {
+.root {
   align-items: center;
   background-color: #fff;
   cursor: pointer;
@@ -12,11 +12,11 @@
   box-shadow: 0 0.25rem 0.5625rem 0 rgba(0, 0, 0, 0.05);
 }
 
-.item:not(:first-child) {
+.root:not(:first-child) {
   border-top: 1px solid rgba(0, 0, 0, .1);
 }
 
-.item::before {
+.root::before {
   content: '';
   box-shadow: 0 3px 6px 0 rgba(243, 230, 37, 0.27);
   background-color: #ffd506;
@@ -28,7 +28,7 @@
   position: absolute;
 }
 
-.itemLabel {
+.label {
   color: #554e8f;
   cursor: pointer;
   margin: 0.3125rem;
@@ -38,22 +38,22 @@
   transition: all .3s ease-in-out;
 }
 
-.itemCheckbox {
+.checkbox {
   position: relative;
   top: 0.125rem;
   margin: 0 1.875rem 0 0;
   cursor: pointer;
 }
 
-.itemCheckbox::before,
-.itemCheckbox::after {
+.checkbox::before,
+.checkbox::after {
   content: "";
   position: absolute;
   transition: all .3s ease-in-out;
   border: 2px solid #ffd506;
 }
 
-.itemCheckbox::before {
+.checkbox::before {
   border-radius: 50%;
   height: 1.25rem;
   top: -4px;
@@ -62,7 +62,7 @@
   z-index: 1;
 }
 
-.itemCheckbox::after {
+.checkbox::after {
   top: 0.1875rem;
   left: 0.3125rem;
   width: 0.625rem;
@@ -72,26 +72,26 @@
   visibility: hidden;
 }
 
-.itemCompleted {
-  background-color: rgba(255, 255, 255, .25);
+.completed {
+  opacity: 0.6;
 }
 
-.itemCompleted::before {
+.completed::before {
   background-color: #d10263;
 }
 
-.itemCompleted .itemLabel {
+.completed .label {
   color: #d9d9d9;
   text-decoration: line-through;
   font-style: italic;
 }
 
-.itemCompleted .itemCheckbox::before {
+.completed .checkbox::before {
   background-color: #d10263;
   border-color: #d10263;
 }
 
-.itemCompleted .itemCheckbox::after {
+.completed .checkbox::after {
   transform: rotate(-50deg);
   height: 0.3125rem;
   border-color: #fff;
@@ -101,7 +101,7 @@
   opacity: 1;
 }
 
-.itemRemove {
+.remove {
   align-items: center;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -120,35 +120,35 @@
   width: 32px;
 }
 
-.itemRemove svg path {
+.remove svg path {
   fill: #fb3636;
 }
 
-.itemRemove small {
+.remove small {
   display: inline-block;
   font-size: 1.125rem;
   font-weight: 800;
   line-height: 1;
 }
 
-.itemRemove,
-.itemRemove:focus,
-.itemRemove:active {
+.remove,
+.remove:focus,
+.remove:active {
   outline: none;
 }
 
-.itemRemove:focus,
-.itemRemove:hover {
+.remove:focus,
+.remove:hover {
   background-color: rgba(255, 207, 207, 0.8);
 }
 
 @media (min-width: 960px) {
-  .itemRemove {
+  .remove {
     opacity: 0;
     visibility: hidden;
   }
 
-  .item:hover .itemRemove {
+  .root:hover .remove {
     opacity: 1;
     visibility: visible;
   }
