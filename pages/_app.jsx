@@ -1,8 +1,14 @@
+import Footer from '~/components/Footer';
+
 /* eslint react/prop-types: "off" */
 const TodoApp = ({ Component, pageProps }) => (
   <>
-    <Component {...pageProps} />
+    <main>
+      <Component {...pageProps} />
+      <Footer />
+    </main>
     <style jsx global>{`
+      @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&display=swap');
       html {
         box-sizing: border-box;
         font-size: 16px;
@@ -15,26 +21,25 @@ const TodoApp = ({ Component, pageProps }) => (
         padding: 0;
       }
       body {
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-          Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        font-family: 'Rubik', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+          Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
         font-size: 1rem;
-      }
-      html,
-      body,
-      #__next {
-        height: 100vh;
-        width: 100vw;
+        font-weight: 400;
+        background-color: #f9fcff;
       }
       #__next {
         padding: 3.75rem;
-        background-color: #f1f8fc;
         display: flex;
         justify-content: center;
+        height: calc(100vh - 3px);
+        width: 100vw;
+        border-top: 3px solid #d10263;
       }
       .container {
         padding: 0 0.9375rem;
         margin: 0 auto;
         max-width: 60rem;
+        padding-bottom: 200px;
       }
     `}</style>
   </>

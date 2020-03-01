@@ -35,8 +35,9 @@ const HomeTodoApp = () => {
       <Head>
         <title>Nextjs - Todo App</title>
       </Head>
-      <main className="container">
+      <div className="container">
         <List title="Shopping list">
+          <Form handleSubmit={handleAddTodos} />
           {items.map(item => (
             <Item
               key={item.id}
@@ -45,9 +46,8 @@ const HomeTodoApp = () => {
               handleRemove={handleRemoveItem}
             />
           ))}
-          <Form handleSubmit={handleAddTodos} />
         </List>
-      </main>
+      </div>
     </>
   );
 };

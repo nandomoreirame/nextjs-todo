@@ -1,0 +1,25 @@
+.footer {
+  align-items: center;
+  background-color: #fff;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  padding: 1.25rem 0.9375rem;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  z-index: 100;
+  border-top: 3px solid #ffd506;
+}
+
+.footer p {
+  color: rgba(0, 0, 0, .5);
+  font-size: 0.8125rem;
+  opacity: 0.75;
+}
+
+.footer p:first-child {
+  margin-bottom: 0.3125rem;
+}

@@ -4,7 +4,7 @@ import styles from './form.module.css';
 
 const TodoForm = ({ handleSubmit }) => (
   <form className={styles.form} onSubmit={handleSubmit}>
-    <input className={styles.formInput} type="text" name="todo" placeholder="Item list" />
+    <input className={styles.formInput} type="text" name="todo" placeholder="Add a new item" />
   </form>
 );
 
