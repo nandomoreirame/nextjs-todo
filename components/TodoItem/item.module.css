@@ -1,0 +1,88 @@
+.item {
+  align-items: center;
+  display: flex;
+  margin: 0.3125rem 0;
+  padding: 0.3125rem 0;
+  width: 100%;
+  position: relative;
+  justify-content: space-between;
+}
+
+.item:not(:first-child) {
+  border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.item label {
+  position: relative;
+  margin: 0.3125rem;
+  cursor: pointer;
+}
+
+.item span {
+  position: relative;
+  top: 0.125rem;
+  margin: 0 1.5625rem 0 0;
+  cursor: pointer;
+}
+
+.item span::before {
+  transition: all .3s ease-in-out;
+  content: "";
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(0, 0, 0, .2);
+}
+
+.itemCompleted label {
+  text-decoration: line-through;
+}
+
+.itemCompleted span::before {
+  transform: rotate(-45deg);
+  height: .5rem;
+  border-color: rgba(0, 0, 0, .2);
+  border-top-style: none;
+  border-right-style: none;
+}
+
+.itemRemove {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  margin: 0;
+  transition: background-color .12s ease-in-out;
+  /* position: absolute;
+  right: 0; */
+}
+
+.itemRemove small {
+  display: inline-block;
+  font-size: 1.125rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.itemRemove,
+.itemRemove:focus,
+.itemRemove:active {
+  outline: none;
+}
+
+.itemRemove:hover {
+  background-color: #dedede;
+}
