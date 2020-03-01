@@ -6,7 +6,6 @@ import { useTodos } from '~/store/hooks';
 import Form from '~/components/TodoForm';
 import List from '~/components/TodoList';
 import Item from '~/components/TodoItem';
-import styles from './index.module.css';
 
 const HomeTodoApp = () => {
   const { items } = useTodos();
@@ -53,8 +52,21 @@ const HomeTodoApp = () => {
   );
 };
 
-// HomeTodoApp.getInitialProps = ({ reduxStore }) => ({
-//   state: reduxStore.getState(),
-// });
+HomeTodoApp.getInitialProps = ({ reduxStore }) => {
+  const firstItemId = uuidv4();
+  const items = [
+    { id: firstItemId, text: 'Hey' },
+    { id: uuidv4(), text: 'hoooo' },
+    { id: uuidv4(), text: `let's go` },
+  ];
+
+  // map to add items
+  items.map(payload => reduxStore.dispatch({ type: TODO_ADD, payload }));
+
+  // complete first item
+  reduxStore.dispatch({ type: TODO_COMPLETE, payload: { id: firstItemId } });
+
+  return {};
+};
 
 export default withRedux(HomeTodoApp);
