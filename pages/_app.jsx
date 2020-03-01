@@ -28,7 +28,6 @@ const TodoApp = ({ Component, pageProps }) => (
         background-color: #f9fcff;
       }
       #__next {
-        padding: 3.75rem;
         display: flex;
         justify-content: center;
         height: calc(100vh - 3px);

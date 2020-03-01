@@ -118,8 +118,6 @@
   padding: 0;
   transition: all .3s ease-in-out;
   width: 32px;
-  opacity: 0;
-  visibility: hidden;
 }
 
 .itemRemove svg path {
@@ -144,7 +142,14 @@
   background-color: rgba(255, 207, 207, 0.8);
 }
 
-.item:hover .itemRemove {
-  opacity: 1;
-  visibility: visible;
+@media (min-width: 960px) {
+  .itemRemove {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .item:hover .itemRemove {
+    opacity: 1;
+    visibility: visible;
+  }
 }

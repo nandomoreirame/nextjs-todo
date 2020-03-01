@@ -6,7 +6,7 @@ const TodoList = ({ title, children }) => {
   return (
     <>
       {children && (
-        <section>
+        <section className={styles.section}>
           {title && <h4 className={styles.listTitle}>{title}</h4>}
           <div className={styles.list}>{children}</div>
         </section>
