@@ -31,6 +31,11 @@ const TodoApp = ({ Component, pageProps }) => (
         display: flex;
         justify-content: center;
       }
+      .container {
+        padding: 0 0.9375rem;
+        margin: 0 auto;
+        max-width: 60rem;
+      }
     `}</style>
   </>
 );

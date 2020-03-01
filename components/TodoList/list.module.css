@@ -1,6 +1,21 @@
-.items {
+.list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   display: block;
+}
+
+.listTitle {
+  font-size: 1.375rem;
+  font-weight: 300;
+  margin-bottom: 0.9375rem;
+  text-transform: uppercase;
+}
+
+.listTitle::after {
+  content: '';
+  display: block;
+  width: 1.5625rem;
+  height: 0.1875rem;
+  background-color: rgba(0, 0, 0, .4);
 }

@@ -4,8 +4,11 @@ import styles from './item.module.css';
 
 const TodoItem = ({ item, handleComplete, handleRemove }) => {
   return (
-    <div className={`${styles.item} ${item.completed ? styles.itemCompleted : ''}`}>
-      <label onClick={handleComplete(item.id)}>
+    <div
+      className={`${styles.item} ${item.completed ? styles.itemCompleted : ''}`}
+      onClick={handleComplete(item.id)}
+    >
+      <label>
         <span className="itemCheckbox" />
         {item.text}
       </label>

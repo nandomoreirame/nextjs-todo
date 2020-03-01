@@ -1,11 +1,13 @@
 .item {
   align-items: center;
+  background-color: #fff;
+  cursor: pointer;
   display: flex;
-  margin: 0.3125rem 0;
-  padding: 0.3125rem 0;
-  width: 100%;
-  position: relative;
   justify-content: space-between;
+  margin: 0;
+  padding: 0.625rem;
+  position: relative;
+  width: 100%;
 }
 
 .item:not(:first-child) {
@@ -36,6 +38,10 @@
   border: 2px solid rgba(0, 0, 0, .2);
 }
 
+.itemCompleted {
+  background-color: rgba(0, 0, 0, .05);
+}
+
 .itemCompleted label {
   text-decoration: line-through;
 }
@@ -61,13 +67,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 28px;
-  height: 28px;
+  width: 1.75rem;
+  height: 1.75rem;
   padding: 0;
   margin: 0;
   transition: background-color .12s ease-in-out;
-  /* position: absolute;
-  right: 0; */
 }
 
 .itemRemove small {

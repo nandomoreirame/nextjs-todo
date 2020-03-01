@@ -35,8 +35,8 @@ const HomeTodoApp = () => {
       <Head>
         <title>Nextjs - Todo App</title>
       </Head>
-      <main>
-        <List>
+      <main className="container">
+        <List title="Shopping list">
           {items.map(item => (
             <Item
               key={item.id}
@@ -55,15 +55,16 @@ const HomeTodoApp = () => {
 HomeTodoApp.getInitialProps = ({ reduxStore }) => {
   const firstItemId = uuidv4();
   const items = [
-    { id: firstItemId, text: 'Hey' },
-    { id: uuidv4(), text: 'hoooo' },
-    { id: uuidv4(), text: `let's go` },
+    { id: firstItemId, text: 'Milk' },
+    { id: uuidv4(), text: 'Bean' },
+    { id: uuidv4(), text: 'Rice' },
+    { id: uuidv4(), text: 'Bread' },
   ];
 
   // map to add items
   items.map(payload => reduxStore.dispatch({ type: TODO_ADD, payload }));
 
-  // complete first item
+  // completing the first item
   reduxStore.dispatch({ type: TODO_COMPLETE, payload: { id: firstItemId } });
 
   return {};
